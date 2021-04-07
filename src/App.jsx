@@ -7,7 +7,7 @@ const App = () => {
   return (
     <React.Fragment>
       <h1 style={{ color: "red" }}>こんにちは!</h1>
-      <ColorfulMessage color="blue" message="お元気ですか?"></ColorfulMessage>
+      <ColorfulMessage color="blue">お元気ですか？</ColorfulMessage>
       <ColorfulMessage color="pink" message="元気です" />
       <button onClick={onClickButton}>ボタン</button>
     </React.Fragment>
