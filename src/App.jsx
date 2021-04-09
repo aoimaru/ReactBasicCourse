@@ -9,7 +9,7 @@ const App = () => {
   // const onClickButton = () => alert("hello");
 
   const onClickCountUp = () => {
-    if (num % 3 == 0) {
+    if (num % 3 === 0) {
       setFaceShowFlag(!faceShowFlag);
     }
     setNum(num + 1);
