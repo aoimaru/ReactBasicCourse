@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ColorfulMessage from "./components/ColorfulMessage";
 
 const App = () => {
-  // console.log("hello");
+  console.log("hello");
   // console.log("start");
   const [num, setNum] = useState(0);
   const [faceShowFlag, setFaceShowFlag] = useState(true);
@@ -17,11 +17,27 @@ const App = () => {
     setFaceShowFlag(!faceShowFlag);
   };
 
-  if (num % 3 === 0) {
-    faceShowFlag || setFaceShowFlag(true);
-  } else {
-    faceShowFlag && setFaceShowFlag(false);
-  }
+  useEffect(() => {
+    // console.log("useEffect");
+    if (num % 3 === 0) {
+      faceShowFlag || setFaceShowFlag(true);
+    } else {
+      faceShowFlag && setFaceShowFlag(false);
+    }
+  }, [num]);
+
+  /**
+   * 構文的には以下の方が正しいと出力されるが, プログラムとしての動作はおかしい
+   */
+  // useEffect(() => {
+  //   // console.log("useEffect");
+  //   if (num % 3 === 0) {
+  //     faceShowFlag || setFaceShowFlag(true);
+  //   } else {
+  //     faceShowFlag && setFaceShowFlag(false);
+  //   }
+  // }, [num, faceShowFlag]);
+
   // console.log(num);
   return (
     <React.Fragment>
