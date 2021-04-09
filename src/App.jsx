@@ -4,11 +4,14 @@ import ColorfulMessage from "./components/ColorfulMessage";
 const App = () => {
   console.log("start");
   const [num, setNum] = useState(0);
-  const [faceShowFlag, setFaceShowFlag] = useState(true);
+  const [faceShowFlag, setFaceShowFlag] = useState(false);
 
   // const onClickButton = () => alert("hello");
 
   const onClickCountUp = () => {
+    if (num % 3 == 0) {
+      setFaceShowFlag(!faceShowFlag);
+    }
     setNum(num + 1);
   };
 
