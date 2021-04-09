@@ -2,17 +2,14 @@ import React, { useState } from "react";
 import ColorfulMessage from "./components/ColorfulMessage";
 
 const App = () => {
-  console.log("hello");
-  console.log("start");
+  // console.log("hello");
+  // console.log("start");
   const [num, setNum] = useState(0);
-  const [faceShowFlag, setFaceShowFlag] = useState(false);
+  const [faceShowFlag, setFaceShowFlag] = useState(true);
 
   // const onClickButton = () => alert("hello");
 
   const onClickCountUp = () => {
-    if (num % 3 === 0) {
-      setFaceShowFlag(!faceShowFlag);
-    }
     setNum(num + 1);
   };
 
@@ -20,6 +17,11 @@ const App = () => {
     setFaceShowFlag(!faceShowFlag);
   };
 
+  if (num % 3 === 0) {
+    faceShowFlag || setFaceShowFlag(true);
+  } else {
+    faceShowFlag && setFaceShowFlag(false);
+  }
   // console.log(num);
   return (
     <React.Fragment>
